@@ -1,0 +1,12 @@
+application:
+    timeout: 10000
+    providers:
+        -
+            name: provider_A
+            url: http://provider-a:8080
+        -
+            name: provider_B
+            url: http://provider-b:8080
+        -
+            name: provider_C
+            url: http://provider-c:8080

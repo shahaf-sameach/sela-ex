@@ -1,0 +1,41 @@
+version: '3'
+services:
+  provider-a:
+    image: maven:3.6.2-jdk-11-slim
+    volumes:
+      - ./hotel-vendor:/app
+    entrypoint:
+      - mvn
+      - -f
+      - /app/pom.xml
+      - spring-boot:run
+  provider-b:
+    image: maven:3.6.2-jdk-11-slim
+    volumes:
+      - ./hotel-vendor:/app
+    entrypoint:
+      - mvn
+      - -f
+      - /app/pom.xml
+      - spring-boot:run
+  provider-c:
+    image: maven:3.6.2-jdk-11-slim
+    volumes:
+      - ./hotel-vendor:/app
+    entrypoint:
+      - mvn
+      - -f
+      - /app/pom.xml
+      - spring-boot:run
+  hotel-service:
+    image: maven:3.6.2-jdk-11-slim
+    volumes:
+      - ./hotel-service:/app
+    entrypoint:
+      - mvn
+      - -f
+      - /app/pom.xml
+      - spring-boot:run
+      - -Dspring-boot.run.profiles=docker
+    ports:
+      - "8080:8080"

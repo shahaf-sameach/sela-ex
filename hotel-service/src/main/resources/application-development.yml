@@ -1,0 +1,11 @@
+application:
+    providers:
+        -
+            name: provider_A
+            url: http://localhost:8081
+        -
+            name: provider_B
+            url: http://localhost:8081
+        -
+            name: provider_C
+            url: http://localhost:8081
