@@ -23,7 +23,7 @@ public class SimpleController {
     @GetMapping("/price")
     public Mono<ResponseEntity<Integer>> getHotelPrice(@RequestParam("hotelName") String hotelName) {
         log.info("got price request for hotel {}", hotelName);
-        return Mono.delay(Duration.of(new Random().nextInt(100), ChronoUnit.MILLIS))
+        return Mono.delay(Duration.of(new Random().nextInt(1000), ChronoUnit.MILLIS))
                 .map(i -> hotelService.getPriceByName(hotelName))
                 .map(ResponseEntity::ok);
     }
